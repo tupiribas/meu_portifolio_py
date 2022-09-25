@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="text/javascript" href="{{ url_for('static', filename='css/bootstrap.min.js') }}">
+    <title>Tupi Guedes | Dev</title>
+</head>
+<style>
+    .barra-nav {
+        background: linear-gradient(to right, rgb(0, 195, 255), #ffff1c);
+    }
+    .cor-azul {
+        color: rgb(0, 141, 184);
+    }
+    .cartao {
+        display: flex;
+        justify-content: center;
+        margin-inline:40px;
+        width: 350px;
+        height: 450px;
+        background-color: #333;
+        border-radius: 10px;
+        outline: 1px solid rgba(255, 255, 255, 0.5);
+        outline-offset: -8px;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+    }
+    .cartao-imagem {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: .6;
+        transition: transform 0.75s;
+        filter: blur(2px);
+    }
+    .cartao:hover .cartao-imagem {
+        transform: scale(1.05);
+        filter: none;
+    }
+    .titolo-cartao {
+        color: #fff;
+        position: absolute;
+        top: 200px;
+        font-size: 20px;
+        text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+    }
+</style>
+<body>
+    {{ fontawesome_html() }}
+    <header>
+        <div class="barra-nav collapse" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-7 py-4">
+                        <h4 class="text-white">Sobre</h4>
+                        <p class="text-muted">Seja bem vindo ao meu site! É nele que publico meus projetos de diversas linguagens e tecnologias.</p>
+                    </div>
+                    <div class="col-sm-4 offset-md-1 py-4">
+                        <h4 class="text-white">Contato</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="cor-azul">Instagram</a></li>
+                            <li><a href="#" class="cor-azul">GitHub</a></li>
+                            <li><a href="#" class="cor-azul">tupyribas@outlook.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar barra-nav navbar-dark bg-dark shadow-sm">
+            <div class="container">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <i class="fa fa-code"></i>
+                    <strong class="mx-2 f-5">Tupi Guedes</strong>
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">Desenvolvedor de Sistemas</h1>
+                    <p class="lead text-muted">Seja bem-vindo ao meu portifólio feito em Python,
+                        curta e se divirta com meus projetos.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <div class="container px-4" id="custom-cards">
+            <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+                <a href="https://github.com/tupiribas/reconhecimento_facial">
+                    <div class="cartao col">
+                        <img src="{{ url_for('static', filename='img/reconheciment_facial1.jpg') }}" class="cartao-imagem">
+                        <h3 class="titolo-cartao">Inteligência Artificial</h3>
+                    </div>
+                </a>
+                
+                <a href="https://github.com/tupiribas/next-crud">
+                    <div class="cartao col">
+                        <img src="{{ url_for('static', filename='img/cadastro_pessaos.png') }}" class="cartao-imagem">
+                        <h3 class="titolo-cartao">Cadastro de pessoa | NextJs</h3>
+                    </div>
+                </a>
+
+                <a href="https://github.com/tupiribas/app_cadastro_react">
+                    <div class="cartao col">
+                        <img src="{{ url_for('static', filename='img/cadastro_pessoas2.png') }}" class="cartao-imagem">
+                        <h3 class="titolo-cartao">Cadastro de pessoa | React</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </main>
+    <footer class="text-white py-5 barra-nav">
+        <div class="container">
+            <p class="float-end mb-1">
+                <a href="#" class="text-decoration-none">Inicio</a>
+            </p>
+            <p class="mb-1">Portifólio criado com <i class="fa fa-heart"></i> por Tupi Guedes ©</p>
+        </div>
+    </footer>
+</body>
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</html>
