@@ -1,1 +1,1 @@
-web: gunicorn -b :$PORT microblog:app
+web: gunicorn -b :$PORT __init__:app
