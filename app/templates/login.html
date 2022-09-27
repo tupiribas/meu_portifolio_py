@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link rel="text/javascript" href="{{ url_for('static', filename='css/bootstrap.min.js') }}">
+    <title>Login do Adm</title>
+</head>
+<style>
+    body {
+        background: linear-gradient(to right, rgb(0, 195, 255), #ffff1c);
+    }
+</style>
+<body class="text-center">
+    {{ fontawesome_html() }}
+    <main class="form-signin w-100 m-auto">
+        <form method="POST">
+          <!-- <img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+          <h1 class="h3 mb-3 fw-normal">Bem-Vindo, Adm!</h1>
+      
+          <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@exemplo.com">
+            <label for="email">Email</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" name="senha" placeholder="Senha">
+            <label for="senha">Senha</label>
+          </div>
+      
+          <div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="lembrar"> Remember me
+            </label>
+          </div>
+
+          <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
+          <p class="mt-5 mb-3 text">Por Tupi Guedes ©</p>
+        </form>
+
+        <hr>
+        <div>
+            <p>{{tudo}}}</p>
+        </div>
+    </main>
+</body>
+</html>
