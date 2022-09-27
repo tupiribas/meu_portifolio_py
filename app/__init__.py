@@ -13,16 +13,18 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/login', methods=('GET', 'POST'))
+@app.route('/login')
 def login():
-    x = {}
-    if request.method == 'POST':
-        n = request.form['email']
-        s = request.form['senha']
-        x['n'] = n
-        x['s'] = s
+    return render_template('login.html')
 
-    return render_template('login.html', tudo={x['n'], x['s']})
+
+@app.route('/adm', methods=['POST'])
+def areadoadm():
+    n = request.form.get('email')
+    s = request.form.get('senha')
+
+    return "{} e {}".format(n, s)
+    # return render_template('areaadm.html', tudo={x['n'], x['s']})
 
 
 if __name__ == '__main__':
